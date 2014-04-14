@@ -4,4 +4,4 @@ beginnings = ['Gall', 'Sim', 'Kasp', 'Rasm', 'Christ', 'Kats', 'Mar', 'Benj', 'S
 
 middles = ['ill', 'ib', 'ob', 'on', 'of', 'u', 'a', 'en', 'and', 'i', 'ist', 'ah', 'e', 'esg', 'er', 'erg', 'ulb', 'ul', 'ell', 'el', 'in', 'iss', 'or', 'ab', 'ol', 'old']
 
-endings = ['ob', 'er', 'ak', 'i', 'in', 'ons']
+endings = ['ob', 'er', 'ak', 'i', 'in', 'ons', 'en', 'is', 'an']
