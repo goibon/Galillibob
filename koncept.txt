@@ -1,0 +1,29 @@
+Benyt en liste over fornavne (http://www.gro-scotland.gov.uk/files1/stats/pop-names-07-t4.csv)
+
+Opdel alle navne i sets der hver indeholder 1 vokal
+
+Agn | i | eszk | a
+Phi | lipp | os
+Vi | ncent
+Ta | yl | or
+Ma | di | syn
+
+
+Opdel farvekoden således:
+RGB(255:255:255) =
+25 | 52 | 55 | 25 | 5
+
+Vi skal altså bruge 25 mulige begyndelser (Agn, Phi, Vi, Ta, Ma)
+Vi skal bruge 55 mulige middles (i, eszk, lipp, yl, di)
+Vi skal bruge 5 mulige endings (a, os, or, syn)
+
+RGB(010:203:022) =
+01 | 02 | 03 | 02 | 2 =
+Agneszklippeszkos
+
+==Notes:==
+Det er svært at finde 55 forskellige middles. Følgende opdeling kræver kun 25:
+25|5|25|5|25|5
+
+
+
