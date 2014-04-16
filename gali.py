@@ -6,7 +6,7 @@ import argparse
 import webbrowser
 import os
 from colordisplay import displayRGBColorInNewTab
-from rgb2hex import rgb2hex
+from rgb2hex import *
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description='Converts RGB to Galillibob and vice versa.')
@@ -21,14 +21,18 @@ if __name__ == '__main__':
 		print e
 		sys.exit(1)
 	
-	color = None
+	
+
+	
 	if args.inputType == 'rgb':
-		hexColor = rgb2hex(args.color)
-		color = convertRGBToGali(args.color)
+		rgb = splitDecRGB(args.color)
+		gali = convertRGBToGali(args.color)
 	else:
-		color = convertGaliToRGB(args.color)
-		hexColor = rgb2hex(color)
+		gali = args.color
+		rgb = splitDecRGB(convertGaliToRGB(args.color))
+
 	if args.p:
-		print color
+		print "rgb: %s" %rgb
+		print "gali: " + gali 
 	if args.browser:
-		displayRGBColorInNewTab(hexColor)
+		displayRGBColorInNewTab(rgb, gali)

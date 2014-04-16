@@ -1,2 +1,11 @@
-def rgb2hex(color):
-	return hex(int(color[0:3])).lstrip("0x") + hex(int(color[3:6])).lstrip("0x") + hex(int(color[6:9])).lstrip("0x")
+def splitDecRGB(decimalRGB):
+	rgb = []
+	rgb.append(int(decimalRGB[0:3]))
+	rgb.append(int(decimalRGB[3:6]))
+	rgb.append(int(decimalRGB[6:9]))
+	
+	return rgb
+
+def rgb2hex(red, green, blue):
+	result = format(red, 'x') + format(green, 'x') + format(blue, 'x')
+	return result
