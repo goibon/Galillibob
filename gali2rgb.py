@@ -16,9 +16,7 @@ def convertGaliToRGB(colorGali):
 
 	firstVocal = colorGali.find("|")
 	colorGali = colorGali[0:firstVocal] + colorGali[firstVocal + 1:]
-
 	arrGali = colorGali.split("|")
-	print arrGali
 
 	galiCode = ""
 	segNum = 0
@@ -37,4 +35,4 @@ def convertGaliToRGB(colorGali):
 	     galiCode += str(endings.index(galiSegment))
 	  segNum = segNum + 1
 
-	print galiCode
+	return galiCode
