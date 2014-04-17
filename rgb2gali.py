@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 from common import *
 
-def convertRGBToGali(colorRGB):
+def convertRGBToGali(rgb):
 	#Old rgb2gali method saved, because it would be easier to memorize and do manually.
 	#return beginnings[int(colorRGB[0:2])] + middles[int(colorRGB[2:3])] + middles[int(colorRGB[3:5]) ] + middles[int(colorRGB[5:6])] + middles[int(colorRGB[6:8])] + endings[int(colorRGB[8:9])]
 
-	R = int(colorRGB[0:3])
-	G = int(colorRGB[3:6])
-	B = int(colorRGB[6:9])
+	R = rgb[0]
+	G = rgb[1]
+	B = rgb[2]
 	#print "RGB: " + str(R) + ":" + str(G) + ":" + str(B)
 
 	calc = (R * 256**2) + (G * 256) + (B)

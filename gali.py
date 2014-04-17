@@ -26,7 +26,7 @@ if __name__ == '__main__':
 	
 	if args.inputType == 'rgb':
 		rgb = splitDecRGB(args.color)
-		gali = convertRGBToGali(args.color)
+		gali = convertRGBToGali(rgb)
 	else:
 		gali = args.color
 		rgb = splitDecRGB(convertGaliToRGB(args.color))
