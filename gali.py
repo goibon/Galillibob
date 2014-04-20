@@ -8,43 +8,41 @@ import os
 from colordisplay import displayRGBColorInNewTab
 from rgb2hex import *
 import unittest
+from multiprocessing import Process
 
 class ColorTestCase(unittest.TestCase):
 	def setUp(self):
-		self.rgbcolor = splitDecRGB('255255255')
-		self.galicolor = 'hajrarbhlarbhlydn'
+		pass
 
 	def tearDown(self):
-		# self.widget.dispose()
-		self.rgbcolor = None
-		self.galicolor = None
-        
-	def test_rgb_to_gali(self):
-		rgblist = [0,0,0]
-		for x in xrange(0,256):
-			rgblist[0] = x
-			for y in xrange(0,256):
-				rgblist[1] = y
-				for z in xrange(0,256):
-					rgblist[2] = z
-					gali = convertRGBToGali(rgblist)
-					rgb = addZeros(str(rgblist[0]),3) + addZeros(str(rgblist[1]),3) + addZeros(str(rgblist[2]),3)
-					self.assertEqual(rgb, convertGaliToRGB(gali)) 
+		pass
 
-	def check_rgb_gali(red, green, blue):
-		initialRGB = []
-		initialRGB.append(red)
-		initialRGB.append(green)
-		initialRGB.append(blue)
-		initialRGB = splitDecRGB(rgb)
+	def test_rgb_to_gali_async(self):
+		self.loopX()
+
+	def loopX(self):
+		for x in xrange(0,256):
+			yp = Process(target=self.loopY, args=(x,))
+			yp.start()
+		yp.join()
+
+	def loopY(self, x):
+		for y in xrange(0,256):
+			self.loopZ(x,y)
+
+	def loopZ(self, x,y):
+		for z in xrange(0,256):
+			self.check_rgb_gali(x,y,z)
+
+	def check_rgb_gali(self, red, green, blue):
+		initialRGB = [red,green,blue]
 
 		gali = convertRGBToGali(initialRGB)
 		rgb = convertGaliToRGB(gali)
 
-		self.assertEqual(gali, rgb)
-	# def test_default_size(self):
-	# 	self.assertEqual(self.widget.size(), (50,50), 'incorrect default size')
-	
+		initialRGBZeroed = addZeros(str(initialRGB[0]),3) + addZeros(str(initialRGB[1]),3) + addZeros(str(initialRGB[2]),3)
+
+		self.assertEqual(initialRGBZeroed, rgb)
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description='Converts RGB to Galillibob and vice versa.')
