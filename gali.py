@@ -7,7 +7,7 @@ import webbrowser
 import os
 from colordisplay import displayRGBColorInNewTab
 from rgb2hex import *
-from UnitTests import runtests
+from unittests import runtests
 
 
 
